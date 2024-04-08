@@ -1,10 +1,13 @@
 import React from "react";
-import { Navigation } from "../components";
+import { Blog, Container, Navigation } from "../components";
 
 const HomePage = () => {
   return (
     <div>
       <Navigation />
+      <Container>
+        <Blog />
+      </Container>
     </div>
   );
 };

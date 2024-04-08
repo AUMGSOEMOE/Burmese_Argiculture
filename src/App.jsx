@@ -4,7 +4,7 @@ import { Home } from "./pages";
 
 const App = () => {
   return (
-    <div>
+    <div className=" bg-hero">
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>

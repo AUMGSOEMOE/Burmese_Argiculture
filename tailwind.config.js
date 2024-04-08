@@ -15,8 +15,15 @@ module.exports = {
       screens: {
         "2xl": "1400px",
       },
+      fontFamily: {
+        sans: ["Rubik", "sans - serif"],
+        serif: ["Merienda", "cursive"],
+      },
     },
     extend: {
+      backgroundImage: {
+        hero: "url('src/img/header/background.png')",
+      },
       colors: {
         main: "#017D03",
         runner: "#FF9C00",

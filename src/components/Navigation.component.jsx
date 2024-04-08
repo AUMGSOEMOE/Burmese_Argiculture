@@ -10,10 +10,11 @@ import { HiChevronDoubleRight } from "react-icons/hi";
 import { FaPlus } from "react-icons/fa6";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
+import { MenuButton } from ".";
 
 const NavigationComponent = () => {
   return (
-    <div className="flex ps-1 gap-1">
+    <div className="flex ps-1 gap-1 bg-white">
       {/* logo box */}
       <div className=" bg-main w-[20%] py-4 flex items-center">
         <img className=" w-24 ml-9" src="src/img/header/logo2.png" alt="" />
@@ -51,10 +52,11 @@ const NavigationComponent = () => {
         {/* nav box */}
         <div className="flex items-center  h-[70%] justify-between ">
           <div className="flex gap-9 text-lg font-normal ">
-            <button className="flex items-center gap-1">
-              HOME
-              <FaPlus className="text-xs text-main" />
-            </button>
+            <MenuButton
+              name={`HOME`}
+              data={`Organic Farm, Organic Shop,  Mega Shop`}
+            />
+
             <button>ABOUT US</button>
             <button className="flex items-center gap-1">
               SERVICES
