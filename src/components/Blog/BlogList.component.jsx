@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { processing, ready, wrong } from "../../store/slice/blog.slice";
 import { api } from "../../store/service/baseURL";
-import { Pagination } from "..";
+import { Button, Pagination } from "..";
 import { CiUser } from "react-icons/ci";
 import { MdDateRange } from "react-icons/md";
 import { HiChevronDoubleRight } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const BlogListComponent = () => {
   const dispatch = useDispatch();
@@ -25,8 +26,9 @@ const BlogListComponent = () => {
     (async () => {
       try {
         const res = await api.get("/blog");
-        dispatch(ready(res.data));
-        return res.data;
+        const blogs = res.data;
+        dispatch(ready(blogs));
+        return blogs;
       } catch (error) {
         throw new Error(error.message);
       }
@@ -46,10 +48,12 @@ const BlogListComponent = () => {
             key={i.id}
             className=" col-span-6 shadow-2xl rounded-lg bg-white flex gap-4 p-10 h-full "
           >
-            <div className=" w-48 ">
-              <button className="w-52 hover:scale-110 duration-700">
-                <img className="  rounded-2xl  " src={i.Image} alt="" />
-              </button>
+            <div className=" mr-7">
+              <img
+                className=" w-60 overflow-hidden  rounded-2xl  "
+                src={i.Image}
+                alt=""
+              />
             </div>
             <div>
               <div className="flex flex-col gap-2 opacity-55 ">
@@ -67,10 +71,15 @@ const BlogListComponent = () => {
                 {i.Title}
               </button>
 
-              <button className="flex items-center mt-10 justify-center border border-main text-main hover:text-white hover:bg-main duration-500 w-40 h-12 rounded-full">
-                <span>Read More</span>
-                <HiChevronDoubleRight className="text-xl mt-1" />
-              </button>
+              <Link to={`/detail/${i.Id}`}>
+                <Button
+                  style={
+                    "mt-10 border border-main text-main hover:text-white hover:bg-main duration-500 w-40 h-12"
+                  }
+                  label={"Read More"}
+                  icon={<HiChevronDoubleRight className="text-xl mt-1" />}
+                />
+              </Link>
             </div>
           </div>
         ))}

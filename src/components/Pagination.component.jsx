@@ -17,8 +17,8 @@ const PaginationComponent = ({
       {Array.from({ length: Math.ceil(data?.length / blogPerPage) }).map(
         (_, index) => (
           <button
-            className={`rounded-full w-7 h-7 hover:bg-slate-100 ${
-              currentPage === index + 1 && "bg-main hover:bg-main text-white"
+            className={`rounded-full w-7 h-7 hover:bg-slate-200 ${
+              currentPage === index + 1 && "bg-main hover:bg-none text-white"
             }`}
             onClick={handleClick.bind(null, index)}
             key={index}

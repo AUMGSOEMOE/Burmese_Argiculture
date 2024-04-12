@@ -10,14 +10,18 @@ import { HiChevronDoubleRight } from "react-icons/hi";
 import { FaPlus } from "react-icons/fa6";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
-import { MenuButton } from ".";
+import { Button, MenuButton } from ".";
 
 const NavigationComponent = () => {
   return (
     <div className="flex ps-1 gap-1 bg-white">
       {/* logo box */}
       <div className=" bg-main w-[20%] py-4 flex items-center">
-        <img className=" w-24 ml-9" src="src/img/header/logo2.png" alt="" />
+        <img
+          className=" w-24 h-20 ml-9"
+          src="/src/img/header/logo2.png"
+          alt=""
+        />
       </div>
       <div className=" w-full  ">
         {/* icon box */}
@@ -81,10 +85,12 @@ const NavigationComponent = () => {
                 <MdOutlineShoppingCart />
               </button>
             </div>
-            <div className=" bg-runner hover:bg-black duration-500 text-white text-xs font-bold px-6 py-3 rounded-full">
-              <button className="flex items-center">
-                GET A QUOTE <HiChevronDoubleRight />
-              </button>
+            <div>
+              <Button
+                style={"bg-runner hover:bg-black text-white text-xs px-6 py-3"}
+                label={"GET A QUOTE"}
+                icon={<HiChevronDoubleRight />}
+              />
             </div>
           </div>
         </div>

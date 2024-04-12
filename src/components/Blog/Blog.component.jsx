@@ -1,7 +1,7 @@
 import React from "react";
 import { HiChevronDoubleRight } from "react-icons/hi";
 import { GiLeafSwirl } from "react-icons/gi";
-import { BlogList } from "..";
+import { BlogList, Button } from "..";
 
 const BlogComponent = () => {
   return (
@@ -15,10 +15,11 @@ const BlogComponent = () => {
         </div>
         <div className="flex items-center justify-between">
           <h1 className="text-4xl font-bold">Latest Updates & News</h1>
-          <button className="flex items-center justify-center bg-main hover:bg-black duration-500 text-white font-semibold text-lg w-44 h-14 rounded-full">
-            <span>View More Posts</span>
-            <HiChevronDoubleRight className="text-xl mt-1" />
-          </button>
+          <Button
+            style={" bg-main hover:bg-black duration-500 text-white "}
+            label={"View More Posts"}
+            icon={<HiChevronDoubleRight className="text-xl mt-1" />}
+          />
         </div>
         <div>
           <BlogList />

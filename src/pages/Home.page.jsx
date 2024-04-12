@@ -1,10 +1,9 @@
 import React from "react";
-import { Blog, Container, Navigation } from "../components";
+import { Blog, Container } from "../components";
 
 const HomePage = () => {
   return (
-    <div>
-      <Navigation />
+    <div className=" bg-hero">
       <Container>
         <Blog />
       </Container>
