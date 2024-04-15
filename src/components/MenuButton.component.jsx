@@ -1,33 +1,49 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import { FaPlus } from "react-icons/fa6";
+import { FaMinus } from "react-icons/fa6";
 
 const MenuButtonComponent = ({ name, data }) => {
-  const items = Array.of(data);
-  const list = Array.from(items);
-  useEffect(() => {
-    console.log(list);
-  });
+  const [mice, setMice] = useState(false);
+  const handleMouse = () => {
+    setMice(true);
+    console.log(mice);
+  };
+  const handleOut = () => {
+    setMice(false);
+    console.log(mice);
+  };
   return (
     <div>
-      <DropdownMenu>
-        <DropdownMenuTrigger>
-          <button className="flex items-center gap-1">
+      <HoverCard>
+        <HoverCardTrigger>
+          <button
+            onMouseOver={handleMouse}
+            onMouseOut={handleOut}
+            className="flex items-center gap-1 "
+          >
             {name}
-            <FaPlus className="text-xs text-main" />
+            {mice ? (
+              <FaMinus className="text-xs text-main" />
+            ) : (
+              <FaPlus className="text-xs text-main" />
+            )}
           </button>
-        </DropdownMenuTrigger>
-        {items.map((i, index) => (
-          <DropdownMenuContent key={index}>
-            <DropdownMenuItem>{i}</DropdownMenuItem>
-          </DropdownMenuContent>
-        ))}
-      </DropdownMenu>
+        </HoverCardTrigger>
+        <HoverCardContent className="flex flex-col justify-center px-10 ">
+          {data?.map((i, index) => (
+            <div key={index} className="flex">
+              <a href="" className=" hover:text-main mt-3 ">
+                {i}
+              </a>
+            </div>
+          ))}
+        </HoverCardContent>
+      </HoverCard>
     </div>
   );
 };

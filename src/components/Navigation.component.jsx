@@ -55,25 +55,30 @@ const NavigationComponent = () => {
         </div>
         {/* nav box */}
         <div className="flex items-center  h-[70%] justify-between ">
-          <div className="flex gap-9 text-lg font-normal ">
+          <div className="flex gap-9 text-md font-semibold ">
             <MenuButton
               name={`HOME`}
-              data={`Organic Farm, Organic Shop,  Mega Shop`}
+              data={["Organic Farm", "Organic Shop", "Mega Shop"]}
             />
 
             <button>ABOUT US</button>
-            <button className="flex items-center gap-1">
-              SERVICES
-              <FaPlus className="text-xs text-main" />
-            </button>
-            <button className="flex items-center gap-1">
-              PAGES
-              <FaPlus className="text-xs text-main" />
-            </button>
-            <button className="flex items-center gap-1">
-              BLOGS
-              <FaPlus className="text-xs text-main" />
-            </button>
+            <MenuButton
+              name={`SERVICES`}
+              data={["Services", "Services Detailed"]}
+            />
+
+            <MenuButton
+              name={`SERVICES`}
+              data={[
+                "Team",
+                "Team detailed",
+                "Projects Gallery",
+                "Projects Detailed",
+                "FAQ Page",
+                "Error Page",
+              ]}
+            />
+            <MenuButton name={`Blog`} data={["Blog", "Blog Detailed"]} />
             <button>CONTACT</button>
           </div>
           <div className="flex items-center gap-9 mr-5">
