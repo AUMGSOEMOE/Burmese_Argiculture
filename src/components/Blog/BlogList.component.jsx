@@ -42,18 +42,14 @@ const BlogListComponent = () => {
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
       />
-      <div className=" mt-4 h-screen grid gap-5 grid-cols-12 ">
+      <div className=" mt-4 h-full grid gap-5 grid-cols-12 ">
         {blogList?.map((i) => (
           <div
             key={i.id}
             className=" col-span-6 shadow-2xl rounded-lg bg-white flex gap-4 p-10 h-full "
           >
             <div className=" mr-7">
-              <img
-                className=" w-60 overflow-hidden  rounded-2xl  "
-                src={i.Image}
-                alt=""
-              />
+              <img className=" w-60 rounded-2xl  " src={i.Image} alt="" />
             </div>
             <div>
               <div className="flex flex-col gap-2 opacity-55 ">

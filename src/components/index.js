@@ -19,3 +19,9 @@ export { default as Pagination } from "./Pagination.component";
 
 //container
 export { default as Container } from "./Container.component";
+
+//footer
+export { default as Footer } from "./Footer.component";
+
+//arrow
+export { default as UpArrow } from "./UpArrow.component";

@@ -27,6 +27,7 @@ module.exports = {
       colors: {
         main: "#017D03",
         runner: "#FF9C00",
+        footer: "#002D00",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

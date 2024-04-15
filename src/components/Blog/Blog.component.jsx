@@ -6,7 +6,7 @@ import { BlogList, Button } from "..";
 const BlogComponent = () => {
   return (
     <div>
-      <div className="h-screen mt-14 ">
+      <div className="h-full mt-14 ">
         <div className="flex items-center gap-3 ">
           <GiLeafSwirl className="text-main text-4xl" />
           <h4 className=" font-serif font-extrabold text-runner tracking-widest">
